@@ -318,7 +318,7 @@ html.reveal-all .reveal,.no-js .reveal{opacity:1!important;transform:none!import
 /* soft grounding shadow so the figure sits on the parchment, not floating */
 #tina .media::after,#solanky .media::after{content:'';position:absolute;z-index:2;pointer-events:none;
   left:50%;bottom:8px;transform:translateX(-50%);
-  width:55%;height:42px;background:rgba(0,0,0,.18);filter:blur(25px);border-radius:50%}
+  width:50%;height:40px;background:rgba(0,0,0,.36);filter:blur(22px);border-radius:50%}
 /* portrait: essentially untouched - only the very bottom softened so the hard PNG edge doesn't catch */
 #tina .ph.photo,#solanky .ph.photo{position:relative;z-index:1;background-color:transparent;background-size:contain !important;background-position:center bottom;background-repeat:no-repeat;
   -webkit-mask-image:linear-gradient(to bottom,#000 82%,rgba(0,0,0,.72) 90%,rgba(0,0,0,.32) 96%,transparent 100%);

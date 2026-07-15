@@ -315,11 +315,14 @@ html.reveal-all .reveal,.no-js .reveal{opacity:1!important;transform:none!import
 #tina .split,#solanky .split{display:block;max-width:720px;margin:0 auto;text-align:center;gap:0}
 #tina .media,#solanky .media{position:relative;overflow:visible;max-width:440px;margin:0 auto 10px;z-index:1}
 #tina .split .media .ph,#solanky .split .media .ph{aspect-ratio:4/5;width:100%;overflow:visible;background-color:transparent}
-/* soft grounding shadow beneath the figure */
+/* soft flour dusting behind the figure (local transparent PNG asset) */
 #tina .media::before,#solanky .media::before{content:'';position:absolute;z-index:0;pointer-events:none;
-  left:24%;right:24%;bottom:13%;height:9%;
-  background:radial-gradient(ellipse 50% 50% at 50% 50%, rgba(38,32,22,0.20) 0%, rgba(38,32,22,0.09) 44%, rgba(38,32,22,0) 72%);
-  filter:blur(2px)}
+  left:-16%;right:-16%;bottom:0;height:72%;
+  background:url("3-flour-splash.png") center bottom/contain no-repeat}
+/* soft grounding shadow so the figure sits on the parchment, not floating */
+#tina .media::after,#solanky .media::after{content:'';position:absolute;z-index:2;pointer-events:none;
+  left:50%;bottom:8px;transform:translateX(-50%);
+  width:55%;height:42px;background:rgba(0,0,0,.18);filter:blur(25px);border-radius:50%}
 /* portrait: crisp above, tall eased dissolve so the hard bottom edge is imperceptible */
 #tina .ph.photo,#solanky .ph.photo{position:relative;z-index:1;background-color:transparent;background-size:contain !important;background-position:center bottom;background-repeat:no-repeat;
   -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 44%,rgba(0,0,0,.97) 52%,rgba(0,0,0,.88) 60%,rgba(0,0,0,.74) 68%,rgba(0,0,0,.57) 75%,rgba(0,0,0,.40) 81%,rgba(0,0,0,.24) 86%,rgba(0,0,0,.11) 91%,rgba(0,0,0,.04) 94%,rgba(0,0,0,0) 97%);

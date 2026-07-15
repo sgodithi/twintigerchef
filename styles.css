@@ -317,8 +317,8 @@ html.reveal-all .reveal,.no-js .reveal{opacity:1!important;transform:none!import
 #tina .split .media .ph,#solanky .split .media .ph{aspect-ratio:4/5;width:100%;overflow:visible;background-color:transparent}
 /* soft grounding shadow beneath the figure */
 #tina .media::before,#solanky .media::before{content:'';position:absolute;z-index:0;pointer-events:none;
-  left:26%;right:26%;bottom:6%;height:7%;
-  background:radial-gradient(ellipse 50% 50% at 50% 50%, rgba(38,32,22,0.17) 0%, rgba(38,32,22,0.07) 44%, rgba(38,32,22,0) 72%);
+  left:24%;right:24%;bottom:13%;height:9%;
+  background:radial-gradient(ellipse 50% 50% at 50% 50%, rgba(38,32,22,0.20) 0%, rgba(38,32,22,0.09) 44%, rgba(38,32,22,0) 72%);
   filter:blur(2px)}
 /* portrait: crisp above, tall eased dissolve so the hard bottom edge is imperceptible */
 #tina .ph.photo,#solanky .ph.photo{position:relative;z-index:1;background-color:transparent;background-size:contain !important;background-position:center bottom;background-repeat:no-repeat;

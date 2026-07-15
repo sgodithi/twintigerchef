@@ -1,5 +1,5 @@
 /* ============================================================
-   Twin Tiger Studio - static site styles
+   Twin Tiger Studio — static site styles
    Palette, type, and spacing are defined once in :root below.
    Change brand name in index.html (BRAND const, one place).
    ============================================================ */
@@ -299,47 +299,58 @@ html.reveal-all .reveal,.no-js .reveal{opacity:1!important;transform:none!import
   font-size:12px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;
 }
 .navdrop-menu a:hover{opacity:1;background:var(--sand)}
+/* ===== Selected-work sliding carousel ===== */
+#workgallery .lead{margin-bottom:46px}
+.wgal{position:relative;max-width:920px;margin:0 auto}
+.wgal-viewport{overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 26px 64px -30px rgba(33,29,22,.5);background:var(--bone)}
+.wgal-track{display:flex;transition:transform .8s cubic-bezier(.65,0,.35,1);will-change:transform}
+.wgal-slide{flex:0 0 100%;aspect-ratio:16/9;background:var(--sand)}
+.wgal-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.wgal-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
+  background:rgba(247,244,239,.9);color:var(--ink);font-family:var(--serif);font-size:24px;line-height:1;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;padding-bottom:3px;
+  -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);opacity:.82;
+  transition:background .35s ease,color .35s ease,opacity .35s ease,border-color .35s ease}
+.wgal:hover .wgal-arrow{opacity:1}
+.wgal-arrow:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.wgal-arrow.prev{left:-22px}
+.wgal-arrow.next{right:-22px}
+.wgal-dots{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:28px}
+.wgal-dots button{width:7px;height:7px;border-radius:50%;border:0;padding:0;cursor:pointer;
+  background:var(--line);transition:background .35s ease,transform .35s ease}
+.wgal-dots button:hover{background:var(--muted)}
+.wgal-dots button.on{background:var(--accent);transform:scale(1.45)}
+@media(max-width:980px){.wgal{max-width:100%}.wgal-arrow.prev{left:12px}.wgal-arrow.next{right:12px}}
+@media(max-width:640px){.wgal-arrow{width:38px;height:38px;font-size:20px}.wgal-arrow.prev{left:8px}.wgal-arrow.next{right:8px}}
 
+/* ===== Press page ===== */
+.press-page{padding-top:150px}
+.press-page .lead{margin-bottom:50px}
+.press-grid{column-count:2;column-gap:26px}
+@media(max-width:760px){.press-grid{column-count:1}.press-page{padding-top:120px}}
+.press-item{display:block;break-inside:avoid;margin:0 0 26px;background:var(--bone);
+  border:1px solid var(--line);box-shadow:0 18px 44px -26px rgba(33,29,22,.4);
+  overflow:hidden;text-decoration:none;
+  transition:box-shadow .35s ease,transform .35s ease}
+.press-item:hover{box-shadow:0 26px 60px -24px rgba(33,29,22,.55);transform:translateY(-3px)}
+.press-item img{display:block;width:100%;height:auto}
+.press-cap{padding:15px 18px 18px;font-family:var(--sans);font-size:12px;line-height:1.5;
+  color:var(--muted);letter-spacing:.16em;text-transform:uppercase}
+.press-cap strong{display:block;margin-bottom:6px;color:var(--ink);font-weight:600;
+  font-family:var(--serif);font-size:18px;line-height:1.3;letter-spacing:.01em;text-transform:none}
 
+/* See all press link under homepage carousel */
+.wgal-more{text-align:center;margin-top:30px}
+.wgal-more a{font-family:var(--sans);font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px;
+  transition:color .3s ease,border-color .3s ease}
+.wgal-more a:hover{color:var(--ink);border-color:var(--ink)}
 
-
-
-
-
-/* ===== Chef sections: painted editorial composition (reference redesign) ===== */
-#tina,#solanky{position:relative;overflow:hidden;
-  background:linear-gradient(180deg,#efe4cf 0%,#e9ddc4 100%) !important}
-/* recompose to centered editorial */
-#tina .wrap,#solanky .wrap{position:relative;z-index:1}
-#tina::after,#solanky::after{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20120%20120%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.9%27%20numOctaves%3D%272%27%20stitchTiles%3D%27stitch%27%20result%3D%27t%27%2F%3E%3CfeColorMatrix%20in%3D%27t%27%20type%3D%27saturate%27%20values%3D%270%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27120%27%20height%3D%27120%27%20filter%3D%27url%28%23n%29%27%2F%3E%3C%2Fsvg%3E") repeat;background-size:150px 150px;opacity:.34;mix-blend-mode:multiply}
-#tina .split,#solanky .split{display:block;max-width:720px;margin:0 auto;text-align:center;gap:0}
-#tina .media,#solanky .media{position:relative;overflow:visible;max-width:440px;margin:0 auto 10px;z-index:1}
-#tina .split .media .ph,#solanky .split .media .ph{aspect-ratio:4/5;width:100%;overflow:visible;background-color:transparent}
-/* soft grounding shadow so the figure sits on the parchment, not floating */
-#tina .media::after,#solanky .media::after{content:'';position:absolute;z-index:2;pointer-events:none;
-  left:50%;bottom:8px;transform:translateX(-50%);
-  width:50%;height:40px;background:rgba(0,0,0,.36);filter:blur(22px);border-radius:50%}
-/* portrait: essentially untouched - only the very bottom softened so the hard PNG edge doesn't catch */
-#tina .ph.photo,#solanky .ph.photo{position:relative;z-index:1;background-color:transparent;background-size:contain !important;background-position:center bottom;background-repeat:no-repeat;
-  -webkit-mask-image:linear-gradient(to bottom,#000 82%,rgba(0,0,0,.72) 90%,rgba(0,0,0,.32) 96%,transparent 100%);
-  mask-image:linear-gradient(to bottom,#000 82%,rgba(0,0,0,.72) 90%,rgba(0,0,0,.32) 96%,transparent 100%);
-  -webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center bottom;mask-position:center bottom}
-#solanky .ph.photo{transform:scaleX(-1)}
-/* centered text column */
-#tina .txt,#solanky .txt{position:relative;z-index:2;text-align:center;max-width:640px;margin:0 auto}
-#tina .eyebrow,#solanky .eyebrow{display:block;margin:0 auto}
-#tina .eyebrow::after,#solanky .eyebrow::after{content:'';display:block;width:48px;height:1px;background:var(--accent);opacity:.5;margin:14px auto 20px}
-#tina .split h2,#solanky .split h2{font-size:clamp(40px,5vw,60px);margin-bottom:14px}
-#tina .split .role,#solanky .split .role{margin:0 auto 4px;max-width:46ch;line-height:1.9}
-#tina .split .kicker,#solanky .split .kicker{margin-top:22px}
-#tina .split .kicker::before,#solanky .split .kicker::before{content:'';display:block;width:210px;height:16px;margin:2px auto 22px;
-  background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20220%2016%27%3E%3Cg%20stroke%3D%27%238a7b52%27%20stroke-width%3D%271%27%20opacity%3D%270.55%27%3E%3Cline%20x1%3D%2714%27%20y1%3D%278%27%20x2%3D%2792%27%20y2%3D%278%27%2F%3E%3Cline%20x1%3D%27128%27%20y1%3D%278%27%20x2%3D%27206%27%20y2%3D%278%27%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%27%238a7b52%27%20opacity%3D%270.8%27%3E%3Cpath%20d%3D%27M110%2C1.5%20L116%2C8%20L110%2C14.5%20L104%2C8%20Z%27%2F%3E%3Cpath%20d%3D%27M97%2C8%20L101%2C5%20L101%2C11%20Z%27%2F%3E%3Cpath%20d%3D%27M123%2C8%20L119%2C5%20L119%2C11%20Z%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center/contain no-repeat}
-#tina .split p:not(.kicker):not(.close),#solanky .split p:not(.kicker):not(.close){max-width:52ch;margin-left:auto;margin-right:auto}
-#tina .split ul,#solanky .split ul{columns:2;column-gap:44px;max-width:460px;margin:34px auto;text-align:left}
-#tina .split .close,#solanky .split .close{margin-top:26px}
-@media(max-width:720px){
-  #tina .split ul,#solanky .split ul{columns:1;max-width:260px}
-  #tina .media,#solanky .media{max-width:88%}
-}
-
-
+/* ===== Chef Instagram link ===== */
+.ig-link{display:inline-flex;align-items:center;gap:9px;margin-top:26px;
+  font-family:var(--sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);text-decoration:none;transition:color .3s ease}
+.ig-link:hover{color:var(--ink)}
+.ig-link svg{flex:none;display:block}
